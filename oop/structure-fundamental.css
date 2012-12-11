@@ -1,0 +1,60 @@
+
+
+软件开发 开放/闭合 原则	
+
+软件实体(类，模块，函数)应对扩展开放，对修改闭合
+/*
+	总结:	
+		1. 不要使用过于复杂选择器，使用一个更加明确的类 .subnav 
+		2. 
+		3. css是要表现效果 为样式和风格使用类 .
+		4. 可以使用修饰符，标明使用场景 .widget-sidebar 或 .sidebar-widget
+		5. 避免是用过于通用的类名. 考虑命名空间 .widget-title
+		6. 用于js控制的 可以加上js- 前缀
+
+*/
+
+/*
+	如果要修改.widget 下面的基于.widget 可能都要修改 并且 如果结构一遍 css 都要修改
+*/
+
+.widget{
+	background: yellow;
+	border:1px solid black;
+	color:black;
+	width: 50%;
+}
+#sidebar .widget {
+	width:200px;
+}
+body.homepage .widget{ 
+	background: white;
+}
+
+/*better*/
+.widget{
+	...
+}
+.widget-sidebar{}
+.widget-homepage{}
+
+
+
+
+
+#main-nav ul li ul {}
+
+/*better*/
+.subnav{}
+
+.widget{}
+
+.widget .title {}
+
+/*better*/
+.widget{}
+
+.widget-title{}
+
+
+
